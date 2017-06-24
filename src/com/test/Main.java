@@ -24,11 +24,17 @@ public class Main {
 	public String judge(int num) {
 		StringBuilder result = new StringBuilder();
 		// 是否包含第一个特殊数
-		String numStr = String.valueOf(num);
-		if (numStr.contains(String.valueOf(specialNum[0]))) {
-			result.append(word[0]);
-			return result.toString();
-		}
+		int remainder;
+		int numTemp = num;
+		do {
+			// 通过不断取余获取每一位的数字
+			remainder = numTemp % 10;
+			if(remainder == specialNum[0]){
+				result.append(word[0]);
+				return result.toString();
+			}
+			numTemp = numTemp / 10;
+		} while (numTemp != 0);
 
 		for (int i = 0; i < specialNum.length; i++) {
 
