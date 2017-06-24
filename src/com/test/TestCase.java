@@ -15,7 +15,7 @@ public class TestCase {
 	@Test
 	public void test() {
 		main.countOff();
-		Assert.assertEquals("17",main.judge(17));
+		Assert.assertEquals("FizzBuzz",main.judge(15));
 	}
 
 }
